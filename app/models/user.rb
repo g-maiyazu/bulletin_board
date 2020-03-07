@@ -5,5 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
-  validates :email, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
+  validates :email,         length: { maximum: 255 },
+                            format: { with: VALID_EMAIL_REGEX }
+  validates :name,          length: { maximum: 50 },
+                            presence: true
+  validates :introduction,  length: { maximum: 300 },
+                            allow_blank: true
 end
