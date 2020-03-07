@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Edit user', type: :system do
   it 'プロフィールを編集する' do
-    user = FactoryBot.create(:user, email: 'foobar@mail.com', password: 'password', password: 'password')
+    user = FactoryBot.create(:user, email: 'foobar@mail.com', password: 'password')
 
     # ログイン
     visit root_path
