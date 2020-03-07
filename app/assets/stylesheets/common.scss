@@ -11,6 +11,8 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
+$color-black: #212529;
+
 /* 汎用 */
 /* ======================= */
 body {
@@ -235,4 +237,125 @@ input {
   position: absolute;
   margin-top: 4px \9;
   margin-left: 0px;
+}
+
+/* devise */
+.custom-form {
+  h3 {
+    font-size:15px;
+    width:107px;
+    padding:10px 0px 11px 18px;
+    background-color:#bfbfbf;
+    color:#ffffff;
+    border-radius:3px;
+  }
+  padding: 10px 15px 0 15px;
+  border-radius: 10px 10px 10px 10px;
+  
+  .container {
+    max-width: 440px;
+  }
+
+  .form-title {
+    font-weight: 700;
+    font-size: 1.7rem;
+  }
+
+  label {
+    font-weight: 700;
+    margin-bottom: 0rem;
+  }
+
+  .form-control {
+    color: $color-black;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $color-black;
+    border-radius: 0;
+    box-shadow: none;
+    &:focus {
+      color: $color-black;
+      outline: 0;
+      box-shadow: none;
+    }
+  }
+  #profile_age {
+    width: 110px;
+  }
+  #profile_address{
+    width: 110px;
+  }
+  #profile_floor_width {
+    width: 225px;
+  }
+  #profile_name {
+    width: 225px;
+  }
+
+  .input-group-text {
+    padding: 0.375rem 0.15rem 0.375rem 0.75rem;
+    color: rgba(33,37,41,0.5);
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $color-black;
+    border-radius: 0;
+  }
+
+  .input-group-prepend + .form-control {
+    padding: 0.375rem 0.125rem;
+  }
+
+  .input-group-prepend + .field_with_errors {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+  }
+
+  .form-control.with-ig {
+    padding: 0.375rem 0.125rem;
+  }
+
+  .forgot-password {
+    font-size: 0.9rem;
+  }
+
+  p.note {
+    font-size: 0.8rem;
+  }
+
+  .submit-btn {
+    font-weight: 700;
+    border-radius: 5px;
+    border: 2px solid $color-black;
+  }
+
+  .image-submit-btn {
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  .upload-avatar-btn {
+    height: 35px;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    font-size: 0.875rem;
+  }
+
+  .btn.disabled, .btn:disabled {
+    opacity: 0.3;
+  }
+
+  textarea.form-control {
+    height: 160px;
+  }
+  .pull-left {
+    float: left !important;
+  }
+}
+.edit-profile-link {
+  padding-bottom: 20px;
 }

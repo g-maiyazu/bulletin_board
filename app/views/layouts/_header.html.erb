@@ -3,8 +3,20 @@
     <%= link_to "掲示板サイト", root_url, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "ホーム", root_url %></li>
-        <li><%= link_to "ホーム", root_url %></li>
+        <li><%= link_to "ホーム",   root_url %></li>
+        <% if user_signed_in? %>
+          <li class="dropdown" alt="account">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" alt="account">
+              アカウント <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "プロフィール", '#' %></li>
+              <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "ログイン", login_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>
