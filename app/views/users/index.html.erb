@@ -1,0 +1,13 @@
+<% provide(:title, 'すべてのユーザー') %>
+
+<div class="container">
+  <p>ユーザー数：<%= @users_count%></p>
+  <ul class="users">
+    <% @users.each do |user| %>
+      <li>
+        <%= link_to user.name, user %>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate @users %>
+</div>
