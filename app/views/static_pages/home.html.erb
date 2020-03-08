@@ -1,4 +1,16 @@
 <% provide :title, "ホーム" %>
 
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="wrapper wrapper__bg">
+	 	<div class="container">
+	    <h1>すべてのスレッド</h1>
+	   	<%= link_to "投稿する", new_post_path %>
+	   	<hr>
+	      <div class="panel">
+	     	<% @posts.each do |post| %>
+	     	  <%= link_to post.title, post_path(post) %><br />
+	     	<% end %>
+        <%= paginate @posts %>
+	    </div>
+	  </div>
+	</div>
+</div>

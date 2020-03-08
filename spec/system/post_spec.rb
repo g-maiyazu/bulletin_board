@@ -28,7 +28,7 @@ RSpec.describe 'Posts', type: :system do
     end.to change(Post, :count).by(1)
 
     expect(page).to have_content '投稿されました。'
-    expect(current_path).to eq posts_path
+    expect(current_path).to eq root_path
 
     post = Post.first
     visit post_path(post)

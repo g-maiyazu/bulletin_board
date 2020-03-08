@@ -2,10 +2,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[show]
   before_action :correct_user, only: %i[edit update destroy]
 
-  def index
-    @posts = Post.all.page(params[:page]).per(PER).order('updated_at DESC')
-  end
-
   def show
     @post = Post.find_by(id: params[:id])
   end
@@ -19,7 +15,7 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:notice] = '投稿されました。'
-      redirect_to posts_path
+      redirect_to root_url
     else
       flash[:notice] = '投稿できませんでした。スレッドを確認してください。'
       render 'posts/new'
@@ -44,7 +40,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     flash[:notice] = '投稿が削除されました。'
-    redirect_to posts_path
+    redirect_to root_url
   end
 
   private
