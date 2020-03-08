@@ -15,10 +15,6 @@ $color-black: #212529;
 
 /* 汎用 */
 /* ======================= */
-body {
-  padding-top: 60px;
-}
-
 section {
   overflow: auto;
 }
@@ -100,7 +96,7 @@ footer {
   height: 80px;
   color: #777;
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 ul.footer li {
@@ -376,24 +372,4 @@ p.notice {
 }
 p.alert {
   text-align-last: center;
-}
-
-/* tos */
-.tos-wrapper {
-  margin: 4rem auto 8rem;
-  padding: 2em 4em 1rem;
-  overflow: auto;
-  background: #fff;
-  -webkit-box-shadow: rgba(0,0,0,.3) 0 0 0.6rem 0;
-  box-shadow: 0 0 0.6rem 0 rgba(0,0,0,.3);
-  color: #431;
-}
-h1.title.mb-4.text-center {
-  padding-bottom: 20px;
-}
-.tos-wrapper h1 {
-  font-size: 36px;
-  margin-bottom: 50px;
-  border-bottom: solid 1px #eae7e2;
-  padding-bottom: 5px;
 }
