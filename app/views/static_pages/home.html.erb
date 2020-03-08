@@ -3,7 +3,9 @@
 <div class="wrapper wrapper__bg">
 	 	<div class="container">
 	    <h1>すべてのスレッド</h1>
-	   	<%= link_to "投稿する", new_post_path %>
+      <% if user_signed_in? %>
+	   	  <%= link_to "投稿する", new_post_path %>
+      <% end %>
 	   	<hr>
 	      <div class="panel">
 	     	<% @posts.each do |post| %>
