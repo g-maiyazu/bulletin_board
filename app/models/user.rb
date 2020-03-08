@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :posts, dependent: :destroy
+  has_many :comments
   mount_uploader :avatar, AvatarUploader
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.freeze
@@ -13,5 +15,4 @@ class User < ApplicationRecord
                             presence: true
   validates :introduction,  length: { maximum: 300 },
                             allow_blank: true
-  has_many :posts, dependent: :destroy
 end

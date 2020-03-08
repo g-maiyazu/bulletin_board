@@ -2,13 +2,11 @@
 
 <div class="wrapper wrapper__bg">
 	<div class="container">
-	 	<%= link_to @post.title, post_path(@post) %>
-	 	<hr>
-	 	<h1>スレッド編集</h1>
+	 	<h1 class="form-title mb-4 text-center">スレッド編集</h1>
+    <%= link_to @post.title, post_path(@post) %>
 	 	<% if @post.errors.any? %>
 	 	  <%= @post.errors.full_messages %>
 	 	<% end %>
-
 	 	<div class="panel form">
 	 	  <%= form_for @post do |f| %>
 	 	    <div>
@@ -23,9 +21,8 @@
 	 	        <%= f.text_field :caption %>
 	 	      </div>
 	 	    </div>
-	 	    <%= f.submit "編集を完了", { class: "btn post-form-btn mr-3" } %>
+	 	    <%= f.submit "編集を完了", { class: "btn btn-primary" } %>
  	    <% end %>
 	 	</div>
-
   </div>
 </div>

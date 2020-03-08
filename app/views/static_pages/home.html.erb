@@ -1,13 +1,9 @@
-<% provide :title, "ホーム" %>
+<% provide :title, "投稿一覧" %>
 
 <div class="wrapper wrapper__bg">
 	 	<div class="container">
-	    <h1>すべてのスレッド</h1>
-      <% if user_signed_in? %>
-	   	  <%= link_to "投稿する", new_post_path %>
-      <% end %>
-	   	<hr>
-	      <div class="panel">
+	    <h1 class="form-title mb-4 text-center">すべてのスレッド</h1>
+	    <div class="panel">
 	     	<% @posts.each do |post| %>
 	     	  <%= link_to post.title, post_path(post) %><br />
 	     	<% end %>
