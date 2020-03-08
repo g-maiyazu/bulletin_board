@@ -15,10 +15,6 @@ $color-black: #212529;
 
 /* 汎用 */
 /* ======================= */
-body {
-  padding-top: 60px;
-}
-
 section {
   overflow: auto;
 }
@@ -44,11 +40,10 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  text-align: center;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.4em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: left;
@@ -95,27 +90,18 @@ body {
 /* フッター */
 /* ======================= */
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
-    }
-  }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
-    list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
-  }
+  background: #f6f5f4;
+  padding-top: 30px;
+  text-align: center;
+  height: 80px;
+  color: #777;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+ul.footer li {
+display: inline;
+padding: 10px;
 }
 
 /* デバッグ */
@@ -237,6 +223,7 @@ input {
 
 /* ラジオボタン(remember me) */
 /* NOTICE:bootstrapをオーバーライド */
+/* ======================= */
 .radio input[type="radio"],
 .radio-inline input[type="radio"],
 .checkbox input[type="checkbox"],
@@ -247,6 +234,7 @@ input {
 }
 
 /* devise */
+/* ======================= */
 .custom-form {
   h3 {
     font-size:15px;
@@ -365,4 +353,23 @@ input {
 }
 .edit-profile-link {
   padding-bottom: 20px;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  max-width: min-content;
+}
+.wrapper__bg{
+  .container {
+    max-width: 440px;
+  }
+}
+/* notice,alert */
+/* ======================= */
+p.notice {
+  text-align-last: center;
+}
+p.alert {
+  text-align-last: center;
 }

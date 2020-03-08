@@ -74,3 +74,5 @@ Rails/LexicallyScopedActionFilter:
 Rails/InverseOf:
   Enabled: false
 
+Rails/HasManyOrHasOneDependent:
+  Enabled: false

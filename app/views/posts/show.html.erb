@@ -1,19 +1,31 @@
 <% provide :title, "投稿詳細" %>
 
 <div class="wrapper wrapper__bg">
-
 	<div class="container">
-	 	<%= link_to "スレッド一覧に戻る", root_url %>
-	 	<hr>
 	 	<div class="post">
 	 	  <h3 class="post--name"><%= @post.title %></h3>
-	 	</div>
-    <div class="post">
 	 	  <p><%= @post.caption %></p>
 	 	</div>
-    <% if @post.user_id == current_user.id && user_signed_in? %>
+    <%= link_to "@#{@post.user.name}", user_path(@post.user) %></p>
+    <% if user_signed_in? && @post.user_id == current_user.id %>
 	 	  <%= link_to "編集する", edit_post_path(@post) %>
 	 	  <%= link_to "削除する", post_path(@post), method: :delete, data: { confirm: "本当に削除しますか？" } %>
+    <% end %><hr>
+
+    <%= form_for [@post, @comment] do |f| %>
+      <%= f.text_area :content, size: "20x2", class: 'form-control', placeholder: "公開コメントを入力..." %>
+      <%= f.submit "コメントする", class: "btn btn-primary" %>
+    <% end %><hr>
+    <h2>コメント一覧</h2>
+    <% @comments.each do |comment| %>
+      <div>
+        <%= link_to "@#{comment.user.name}さん", user_path(comment.user.id) %></p>
+        <%= comment.content %>
+        <p><span class= "batu">
+          <%= link_to "コメント削除", [@post,comment], class: "btn", style: "color: #f90e43;",
+           data: {confirm: "本当に削除しますか?", cancel: "キャンセル", commit: "削除"}, method: :delete if comment.user == current_user %>
+        </span></p>
+      </div>
     <% end %>
 	</div>
 </div>

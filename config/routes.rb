@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-  get '/about', to: 'static_pages#about'
-  get '/tos', to: 'static_pages#tos'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -20,5 +18,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :show]
 
-  resources :posts, except: [:index]
+  resources :posts, except: [:index] do
+    resources :comments, only: [:create, :destroy]
+  end
 end
