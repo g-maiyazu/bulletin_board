@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :correct_user, only: %i[edit update destroy]
 
   def index
-    @posts = Post.all.page(params[:page]).per(15).order('updated_at DESC')
+    @posts = Post.all.page(params[:page]).per(PER).order('updated_at DESC')
   end
 
   def show
