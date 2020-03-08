@@ -1,0 +1,31 @@
+<% provide :title, "スレッド編集" %>
+
+<div class="wrapper wrapper__bg">
+	<div class="container">
+	 	<%= link_to @post.title, post_path(@post) %>
+	 	<hr>
+	 	<h1>スレッド編集</h1>
+	 	<% if @post.errors.any? %>
+	 	  <%= @post.errors.full_messages %>
+	 	<% end %>
+
+	 	<div class="panel form">
+	 	  <%= form_for @post do |f| %>
+	 	    <div>
+	 	      <div class="form--label">タイトル</div>
+	 	      <div class="form--input">
+	 	        <%= f.text_field :title %>
+	 	      </div>
+	 	    </div>
+        <div>
+	 	      <div class="form--label">内容</div>
+	 	      <div class="form--input">
+	 	        <%= f.text_field :caption %>
+	 	      </div>
+	 	    </div>
+	 	    <%= f.submit "編集を完了", { class: "btn post-form-btn mr-3" } %>
+ 	    <% end %>
+	 	</div>
+
+  </div>
+</div>

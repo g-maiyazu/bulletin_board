@@ -13,4 +13,5 @@ class User < ApplicationRecord
                             presence: true
   validates :introduction,  length: { maximum: 300 },
                             allow_blank: true
+  has_many :posts, dependent: :destroy
 end
