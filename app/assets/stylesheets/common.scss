@@ -114,83 +114,39 @@ padding: 10px;
   @include box_sizing;
 }
 
-/* サイドバー */
+/* header */
 /* ======================= */
-aside {
-  section.user_info {
-    margin-top: 20px;
-  }
-  section {
-    padding: 10px 0;
-    margin-top: 20px;
-    &:first-child {
-      border: 0;
-      padding-top: 0;
-    }
-    span {
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1;
-    }
-    h1 {
-      font-size: 1.4em;
-      text-align: left;
-      letter-spacing: -1px;
-      margin-bottom: 3px;
-      margin-top: 0px;
-    }
-  }
+header#header-nav {
+  background: #FFFFFF;
+}
+.ib-box{
+  display: flex;
 }
 
-/* gravatar */
+/* search */
 /* ======================= */
-.gravatar {
-  float: left;
-  margin-right: 10px;
+.search {
+  padding: 0 3rem;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  min-width: 60rem;
+  padding-top: 15px;
+  padding-left: 180px;
 }
-
-.gravatar_edit {
-  margin-top: 15px;
+.searchfield {
+  height: 3.2rem;
+  width: 90%;
+  -moz-border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  border-radius: 0.8rem;
+  border: solid 0.1rem #eae7e2;
+  background-color: #fbfbfb;
+  font-size: 1.4rem;
+  box-sizing: border-box;
 }
-
-/* 統計情報 */
-/* ======================= */
-.stats {
-  overflow: auto;
-  margin-top: 0;
-  padding: 0;
-  a {
-    float: left;
-    padding: 0 10px;
-    border-left: 1px solid $gray-lighter;
-    color: gray;
-    &:first-child {
-      padding-left: 0;
-      border: 0;
-    }
-    &:hover {
-      text-decoration: none;
-      color: blue;
-    }
-  }
-  strong {
-    display: block;
-  }
-}
-
-.user_avatars {
-  overflow: auto;
-  margin-top: 10px;
-  .gravatar {
-    margin: 1px 1px;
-  }
-  a {
-    padding: 0;
-  }
-}
-
-.users.follow {
-  padding: 0;
+button#searchbtn {
+  border-radius: 5px;
 }
 
 /* フォーム */
@@ -373,3 +329,4 @@ p.notice {
 p.alert {
   text-align-last: center;
 }
+

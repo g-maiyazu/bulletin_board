@@ -1,0 +1,6 @@
+<div class="inline-block">
+  <%= search_form_for @search, url: root_path do |f| %>
+    <%= f.text_field :title_or_caption_cont, placeholder: 'キーワードを検索...', class: "searchfield" %>
+    <button type="submit" class="searchbtn" id="searchbtn"><i class="fa fa-search" aria-hidden="true"></i></button>
+  <% end %>
+</div>
