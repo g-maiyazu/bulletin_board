@@ -2,7 +2,7 @@
 User.create!( 
   name: 'テストユーザ',
   email: 'test0@mail.com',
-  introduction: 'よろしくお願いします',
+  introduction: 'テストユーザです',
   password: 'password',
   password_confirmation: 'password' )
 
@@ -10,7 +10,7 @@ User.create!(
 10.times do |n|
 name = Faker::Name.unique.name
 email = "test#{n + 1}@mail.com"
-introduction = Faker::Lorem.paragraph(sentence_count: 4..8)
+introduction = 'よろしくお願いします'
 password = 'password'
 
 User.create!( 
@@ -22,10 +22,10 @@ User.create!(
 end
 
 # 投稿
-users = User.order(:created_at).take(6)
+users = User.order(:created_at).take(1)
 
-50.times do
-  title = Faker::Lorem.sentence(5)
-  caption = Faker::Lorem.sentence(50)
+15.times do |n|
+  title = "テストタイトル#{n + 1}"
+  caption = Faker::Lorem.sentence
   users.each { |user| user.posts.create!(title: title, caption: caption) }
 end
