@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## BULLENTIN_BOARD
+<br>Web掲示板サイトです。
 
-Things you may want to cover:
+## 実装できた機能
+* ログイン機能 (email + pass)
+* 閲覧・投稿機能
+* スレッド機能 (スレッドにレスをつけていくスタイル)
+* 検索機能 (単語 / スレッド及びレスの横断検索)
 
-* Ruby version
+## 未実装機能
+* カテゴリ設定 (スレッドごと / 1つのスレッドに複数付与可能)
+* 本番環境へのデプロイ
 
-* System dependencies
+## 使用技術
+* Ruby 2.6.3
+* Ruby on Rails 5.2.3
+* MYSQL 8.0.19
+* Bootstrap
+* Docker
+* Git
+* Rspec
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## テスト
+* Rspec
+  * 単体テスト(model)
+  * 統合テスト(system)

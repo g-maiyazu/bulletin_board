@@ -21,7 +21,6 @@ gem 'font-awesome-rails'
 gem 'ancestry'
 gem 'faker'
 gem 'faker-japanese'
-gem 'dotenv-rails'
 gem 'rack-cors'
 gem 'jquery-rails'
 gem 'kaminari'
@@ -55,6 +54,11 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'launchy'
   gem 'selenium-webdriver'
+end
+
+group :production do
+  gem 'pg'
+  gem 'fog'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
