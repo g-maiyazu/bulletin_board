@@ -7,23 +7,30 @@
 	 	  <%= @post.errors.full_messages %>
 	 	<% end %>
 	 	
-    <div class="panel form">
+    <div class="form">
 	 	  <%= form_for @post do |f| %>
-	 	    <div>
-	 	      <div class="form--label">タイトル</div>
-	 	      <div class="form--input">
-	 	        <%= f.text_field :title, placeholder: "タイトルを入力..." %>
-	 	      </div>
-	 	    </div>
-	 	    <div>
-	 	      <div class="form--label">内容</div>
-	 	      <div class="form--input">
-	 	        <%= f.text_area :caption, placeholder: "記事内容を入力..." %>
-	 	      </div>
-	 	    </div>
+
+        <div class="field form-group">
+          <%= f.label :title %><br />
+          <%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力..." %>
+        </div>
+
+        <div class="field form-group">
+          <%= f.label :caption %><br />
+          <%= f.text_area :caption, class: "form-control", placeholder: "記事内容を入力..." %>
+        </div>
+
+  			<div class="field form-group">
+  			  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 
+  			    <%= category.label do %>
+							<%= category.check_box %>
+						  <%= category.text %>
+  			    <% end %>
+  			  <% end %>
+  			</div><br />
+
 	 	    <%= f.submit "投稿を送信", { class: "btn btn-primary" } %>
 	 	  <% end %>
 	 	</div>
-
 	</div>
 </div>
