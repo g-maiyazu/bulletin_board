@@ -4,8 +4,11 @@
 	<div class="container">
 	 	<div class="post">
 	 	  <h3 class="post--name"><%= @post.title %></h3>
-	 	  <p><%= @post.caption %></p>
-	 	</div>
+      <h4>カテゴリ：<% @post.categories.each do |category| %>
+        <%= category.name %>
+      <% end %></h4><br />
+	 	  <%= @post.caption %>
+	 	</div><br />
     <%= link_to "@#{@post.user.name}", user_path(@post.user) %></p>
     <% if user_signed_in? && @post.user_id == current_user.id %>
 	 	  <%= link_to "編集する", edit_post_path(@post) %>

@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :system do
-  it '新規投稿したあと、その投稿を編集、削除する' do
+  it '新規投稿する' do
     user = FactoryBot.create(:user, name: 'foobar', email: 'foobar@mail.com')
+    category = FactoryBot.create(:category, name: 'ニュースカテゴリ')
 
     # ログイン
     visit root_path
@@ -23,6 +24,7 @@ RSpec.describe 'Posts', type: :system do
 
     fill_in 'タイトルを入力...', with: '私が気になる1つ目のニュース'
     fill_in '記事内容を入力...', with: '人に感染する「コロナウイルス」は、７種類見つかっております'
+    check 'ニュースカテゴリ'
     expect do
       click_button '投稿を送信'
     end.to change(Post, :count).by(1)
@@ -35,5 +37,6 @@ RSpec.describe 'Posts', type: :system do
     expect(current_path).to eq post_path(post)
     expect(page).to have_content '私が気になる1つ目のニュース'
     expect(page).to have_content '人に感染する「コロナウイルス」は、７種類見つかっております'
+    expect(page).to have_content 'ニュースカテゴリ'
   end
 end

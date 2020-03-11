@@ -12,3 +12,7 @@ ja:
         remember_me: ログイン状態を保持
         current_password: 現在のパスワード
         introduction: 自己紹介
+      post:
+        title: タイトル
+        caption: 記事内容
+        category: カテゴリ

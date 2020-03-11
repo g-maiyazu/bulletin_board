@@ -2,12 +2,6 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[show]
   before_action :correct_user, only: %i[edit update destroy]
 
-  def show
-    @post = Post.find_by(id: params[:id])
-    @comments = @post.comments
-    @comment = Comment.new
-  end
-
   def new
     @post = current_user.posts.build if user_signed_in?
   end
@@ -36,6 +30,12 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def show
+    @post = Post.find_by(id: params[:id])
+    @comments = @post.comments
+    @comment = Comment.new
   end
 
   def destroy

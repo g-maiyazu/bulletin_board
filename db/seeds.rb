@@ -29,3 +29,10 @@ users = User.order(:created_at).take(1)
   caption = Faker::Lorem.sentence
   users.each { |user| user.posts.create!(title: title, caption: caption) }
 end
+
+# カテゴリー
+Category.create!( name: 'ニュース' )
+Category.create!( name: '趣味' )
+Category.create!( name: '生活' )
+Category.create!( name: '食' )
+Category.create!( name: 'その他' )

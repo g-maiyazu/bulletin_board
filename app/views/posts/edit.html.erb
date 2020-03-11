@@ -3,26 +3,34 @@
 <div class="wrapper wrapper__bg">
 	<div class="container">
 	 	<h1 class="form-title mb-4 text-center">スレッド編集</h1>
-    <%= link_to @post.title, post_path(@post) %>
 	 	<% if @post.errors.any? %>
 	 	  <%= @post.errors.full_messages %>
 	 	<% end %>
-	 	<div class="panel form">
+
+	 	<div class="form">
 	 	  <%= form_for @post do |f| %>
-	 	    <div>
-	 	      <div class="form--label">タイトル</div>
-	 	      <div class="form--input">
-	 	        <%= f.text_field :title %>
-	 	      </div>
-	 	    </div>
-        <div>
-	 	      <div class="form--label">内容</div>
-	 	      <div class="form--input">
-	 	        <%= f.text_field :caption %>
-	 	      </div>
-	 	    </div>
+
+        <div class="field form-group">
+          <%= f.label :title %><br />
+          <%= f.text_field :title, class: "form-control", placeholder: "タイトルを入力..." %>
+        </div>
+
+        <div class="field form-group">
+          <%= f.label :caption %><br />
+          <%= f.text_area :caption, class: "form-control", placeholder: "記事内容を入力..." %>
+        </div>
+
+  			<div class="field form-group">
+  			  <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category| %> 
+  			    <%= category.label do %>
+							<%= category.check_box %>
+						  <%= category.text %>
+  			    <% end %>
+  			  <% end %>
+  			</div><br />
+
 	 	    <%= f.submit "編集を完了", { class: "btn btn-primary" } %>
- 	    <% end %>
+	 	  <% end %>
 	 	</div>
   </div>
 </div>
