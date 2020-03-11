@@ -30,6 +30,10 @@ textarea {
   }
 }
 
+ul, ol {
+  list-style: none;
+}
+
 /* 文字活字 */
 /* ======================= */
 h1, h2, h3, h4, h5, h6 {
@@ -67,6 +71,11 @@ h4 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+.form-title {
+  font-weight: 700;
+  font-size: 2.7rem;
 }
 
 /* ヘッダーメニュー */
@@ -215,7 +224,7 @@ input {
 
   .form-title {
     font-weight: 700;
-    font-size: 1.7rem;
+    font-size: 2.7rem;
   }
 
   label {
@@ -327,6 +336,10 @@ input {
     max-width: 440px;
   }
 }
+.edit-profile-form {
+  padding-bottom: 80px;
+}
+
 /* notice,alert */
 /* ======================= */
 p.notice {
@@ -335,4 +348,3 @@ p.notice {
 p.alert {
   text-align-last: center;
 }
-

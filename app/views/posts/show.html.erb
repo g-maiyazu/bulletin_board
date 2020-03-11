@@ -1,9 +1,9 @@
-<% provide :title, "投稿詳細" %>
+<% provide :title, "スレッド詳細" %>
 
 <div class="wrapper wrapper__bg">
 	<div class="container">
 	 	<div class="post">
-	 	  <h3 class="post--name"><%= @post.title %></h3>
+      <h1 class="form-title mb-4 text-center"><%= @post.title %></h1>
       <h4>カテゴリ：<% @post.categories.each do |category| %>
         <%= category.name %>
       <% end %></h4><br />
