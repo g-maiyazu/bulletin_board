@@ -2,6 +2,7 @@
 
 <div class="wrapper wrapper__bg">
 	<div class="container">
+    <h1 class="form-title mb-4 text-center">プロフィール</h1>
     <section class="user_info">
       <div class="d-none d-md-block pr-5">
         <% if @user.avatar?%>
@@ -13,7 +14,7 @@
       <p>ユーザーネーム：<%= @user.name %></p>
       <p>自己紹介：<%= @user.introduction %></p>
     </section>
-    <% if current_user %>
+    <% if current_user.id == @user.id %>
       <%= link_to edit_user_path, class: "btn btn-primary" do %>
         <i class="fab fa fa-edit"></i> プロフィール編集
       <% end %>

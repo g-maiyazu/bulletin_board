@@ -1,18 +1,15 @@
 <% provide :title, "すべてのスレッド" %>
 
 <div class="wrapper wrapper__bg">
-	 	<div class="container">
-	    <h1 class="form-title mb-4 text-center">すべてのスレッド</h1>
-	    <div class="panel">
-        <% if @search_posts.any? %>
-	       	<% @search_posts.each do |post| %>
-	       	  <%= link_to post.title, post_path(post) %><br />
-	       	<% end %>
-        <% else %>
-          <p>検索結果は0件です</p>
-        <% end %>
-        <%= paginate @search_posts %>
-	    </div>
-	  </div>
+	<div class="container">
+	  <h1 class="form-title mb-4 text-center">すべてのスレッド</h1>
+    <% if @search_posts.any? %>
+	   	<% @search_posts.each do |post| %>
+	   	  <%= link_to post.title, post_path(post) %><br />
+	   	<% end %>
+    <% else %>
+      <p>検索結果は0件です</p>
+    <% end %>
+    <%= paginate @search_posts %>
 	</div>
 </div>
