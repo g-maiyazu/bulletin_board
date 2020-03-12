@@ -38,6 +38,5 @@ test:
 #
 production:
   <<: *default
-  database: bulletin_board_production
-  username: bulletin_board
-  password: <%= ENV['APP_NAME_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  database: db/production.postgresql
