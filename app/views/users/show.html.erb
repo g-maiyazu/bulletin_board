@@ -6,7 +6,7 @@
     <section class="user_info">
       <div class="d-none d-md-block pr-5">
         <% if @user.avatar?%>
-          <%= image_tag(user.avatar.url, size: "80x80", class: "rounded-circle z-depth-0", alt: "avatar image") %>
+          <%= image_tag(@user.avatar.url, size: "80x80", class: "rounded-circle z-depth-0", alt: "avatar image") %>
         <% else %>
           <%= image_tag("no_user.png", size: "80x80", class: "rounded-circle z-depth-0", alt: "avatar image") %>
         <% end %>
