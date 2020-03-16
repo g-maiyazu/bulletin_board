@@ -8,8 +8,13 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="container center">
+      <% if flash[:notice] %>
+        <%= flash[:notice] %>
+      <% elsif flash[:alert] %>
+        <%= flash[:alert] %>
+      <% end %>
+    </div>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
