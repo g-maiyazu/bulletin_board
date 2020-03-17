@@ -3,6 +3,14 @@ jobs:
   build:
     machine:
       image: circleci/classic:edge
+      environment:
+            RAILS_ENV: test
+            DB_HOST: 127.0.0.1
+            DB_USERNAME: 'root'
+            DB_PASSWORD: 'password'
+      - image: circleci/mysql:5.6
+        environment:
+          MYSQL_ALLOW_EMPTY_PASSWORD: yes
     steps:
       - checkout
       - run:
@@ -16,7 +24,7 @@ jobs:
           command: sleep 1
       - run:
           name: "before_test: setup db"
-          command: docker-compose run webserver rails db:create
+          command: docker-compose run webserver rails db:create db:migrate
       - run:
           name: test
           command: docker-compose run webserver bundle exec rspec
