@@ -11,6 +11,8 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
+@mixin md { @media (min-width: 200px) { @content; } }
+
 $color-black: #212529;
 
 /* 汎用 */
@@ -92,6 +94,11 @@ p {
   &:hover {
     color: white;
     text-decoration: none;
+  }
+}
+@include md {
+  .wrapper.wrapper__bg {
+    padding-top: 30px;
   }
 }
 
