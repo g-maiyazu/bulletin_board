@@ -1,16 +1,8 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/ruby:2.4.1-node-browsers 
-        environment:
-          RAILS_ENV: test
-          DB_HOST: 127.0.0.1
-          DB_USERNAME: 'root'
-          DB_PASSWORD: 'password'
-       - image: circleci/mysql:5.6
-        environment:
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    machine:
+      image: circleci/classic:edge
     steps:
       - checkout
       - run:
