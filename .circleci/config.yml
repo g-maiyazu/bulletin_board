@@ -14,8 +14,9 @@ jobs:
       - run:
           name: sleep for waiting launch db
           command: sleep 1
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
+      - run:
+          name: "before_test: setup db"
+          command: docker-compose run webserver rails db:create
       - run:
           name: test
           command: docker-compose run webserver bundle exec rspec
