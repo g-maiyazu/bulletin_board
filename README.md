@@ -23,6 +23,7 @@ https://bullentin-board.herokuapp.com/
 * Docker
 * Git
 * Rspec
+* heroku
 
 ## テスト
 * Rspec
