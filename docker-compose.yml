@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  webserver:
+  webserver: 
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,16 +9,25 @@ services:
     volumes:
         - .:/app
     ports:
-        - 3000:3000
-    depends_on:
-        - db 
-    tty: true
-    stdin_open: true
-  db:
-    image: mysql:5.7
-    volumes:
-        - post-volume:/var/lib/mysql
+      - "3000:3000"
     environment:
-        MYSQL_ROOT_PASSWORD: password
+      RAILS_ENV: development
+      DATABASE_URL: mysql2://root:password@mysql:3306
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:8.0.16
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_HOST: 127.0.0.1
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: bulletin_board_development
+      MYSQL_USERNAME: root
+    ports:
+    - "4306:3306"
 volumes:
-  post-volume:
+  public-data:
+  tmp-data:
+  log-data:
+  mysql_data:
