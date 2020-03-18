@@ -33,25 +33,37 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v2-dependencies-{{ checksum "Gemfile.lock" }}
-
       - run:
           name: Run Rubocop
           command: bundle exec rubocop
-
       - run: mv config/database.yml config/database.yml.org
       - run: mv config/database.yml.ci config/database.yml
-
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
       - run: gem install bundler
-
       - run:
           name: Run Rspec
           command: bundle exec rspec
-
       - run: mv config/database.yml.org config/database.yml
+
+  deploy:
+    machine:
+      image: circleci/classic:edge
+    steps:
+      - checkout
+      - deploy:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+
 workflows:
   version: 2
-  build:
+  build_and_deploy:
     jobs:
       - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

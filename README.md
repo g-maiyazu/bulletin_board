@@ -13,7 +13,7 @@ https://bullentin-board.herokuapp.com/
 * 検索機能 (単語 / スレッド及びレスの横断検索)
 * カテゴリ設定 (スレッドごと / 1つのスレッドに複数付与可能)
 * 本番環境へのデプロイ(heroku)
-* circleCIを使った自動テスト
+* circleCIを使ったCI/CD
 
 ## 使用技術
 * Ruby 2.6.3
@@ -23,7 +23,7 @@ https://bullentin-board.herokuapp.com/
 * Docker
 * Git
 * Rspec
-* heroku
+* heroku(postgreSQL)
 
 ## テスト
 * Rspec
