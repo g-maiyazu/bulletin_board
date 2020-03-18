@@ -15,7 +15,7 @@
       <p>自己紹介：<%= @user.introduction %></p>
     </section></p>
     <div class="edit-profile-link">
-      <% if current_user.id == @user.id %>
+      <% if @user == current_user %>
         <%= link_to edit_user_path, class: "btn-square" do %>
           <i class="fab fa fa-edit"></i> プロフィール編集
         <% end %>
