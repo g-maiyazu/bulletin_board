@@ -4,8 +4,7 @@ default: &default
   pool: 5
   username: root
   password: password
-  host: db
-  socket: /tmp/mysql.sock
+  host: mysql
 
 development:
   <<: *default
