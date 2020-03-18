@@ -15,6 +15,9 @@ https://bullentin-board.herokuapp.com/
 * 本番環境へのデプロイ(heroku)
 * circleCIを使ったCI/CD
 
+## 実装できた機能
+* 管理ユーザー機能
+
 ## 使用技術
 * Ruby 2.6.3
 * Ruby on Rails 5.2.3
